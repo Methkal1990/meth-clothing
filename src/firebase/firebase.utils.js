@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-///////////////////////////////// configurations to sign in with google//////////////////////////
+
 const config = {
   apiKey: "AIzaSyBqcuDavtkkWI6zBM96KtAl2pkj2IlEW20",
   authDomain: "meth-clothing-db.firebaseapp.com",
@@ -49,6 +49,5 @@ export const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({prompt: 'select_account'});
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
-/////////////// end of configurations to sign in with google //////////////////////
 export default firebase;
 
