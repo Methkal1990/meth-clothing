@@ -33,3 +33,13 @@ export const selectCollection = collectionUrlParam =>
     // after data normalization
     collections => (collections ? collections[collectionUrlParam] : null),
   );
+
+export const selectIsCollectionsFetching = createSelector(
+  [selectShop],
+  shop => shop.isFetching,
+);
+
+export const selectIsCollectionLoaded = createSelector(
+  [selectShop],
+  shop => !shop.collections,
+);
