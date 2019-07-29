@@ -12,14 +12,19 @@ import ShopPage from "./pages/shop/shop.component";
 import Header from "./components/header/header.component";
 import SignInSignUpPage from "./pages/signin-signup/signin-signup.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import {
+  auth,
+  createUserProfileDocument
+} from "./firebase/firebase.utils";
 
 import { setCurrentUser } from "./redux/user/user.actions";
+
 
 class App extends React.Component {
   unSubscribeFromAuth = null;
   componentDidMount() {
     const { setCurrentUser } = this.props;
+    // here the auth.onAuthStateChanged will return a function that we can use it in the componentWillUnmount() to close the transmission of data between the app and firebase
     this.unSubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
