@@ -4,13 +4,6 @@ import "firebase/auth";
 import { async } from "q";
 
 const config = {
-  apiKey: "AIzaSyBqcuDavtkkWI6zBM96KtAl2pkj2IlEW20",
-  authDomain: "meth-clothing-db.firebaseapp.com",
-  databaseURL: "https://meth-clothing-db.firebaseio.com",
-  projectId: "meth-clothing-db",
-  storageBucket: "",
-  messagingSenderId: "143395620994",
-  appId: "1:143395620994:web:3c08017938fd6e30",
 };
 firebase.initializeApp(config);
 
